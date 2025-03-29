@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
-  import Navbar from '../lib/components/Navbar.svelte';
-  import Footer from '../lib/components/Footer.svelte';
+  import Navbar from '$lib/components/Navbar.svelte';
+  import Footer from '$lib/components/Footer.svelte';
   import { page } from '$app/stores';
   import { pageTransition } from '$lib/stores/transition';
 
