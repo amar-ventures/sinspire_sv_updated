@@ -8,10 +8,10 @@
 		"sourceMap": true,
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
-		"baseUrl": ".",
-		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"]
-		}
+		// "baseUrl": ".",
+		// // "paths": {
+		// // 	"$lib": ["src/lib"],
+		// // 	"$lib/*": ["src/lib/*"]
+		// // }
 	}
 }
