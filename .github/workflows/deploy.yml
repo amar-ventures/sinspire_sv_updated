@@ -4,21 +4,16 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build_site:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
-      # - name: Install pnpm
-      #   uses: pnpm/action-setup@v3
-      #   with:
-      #     version: 8
-
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 23.9.0
@@ -27,31 +22,28 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build the site
         env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
-        run: |
-          npm run build
+          # Make sure BASE_PATH matches paths.base if you reference it in code
+          BASE_PATH: '/sinspire_svelte_updated'
+        run: npm run build
 
-      - name: Upload Artifacts
+      # (If you used Option B, ensure docs exists by your postbuild script.)
+      
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This should match the `pages` option in your adapter-static options
-          path: 'docs/'
+          path: 'docs'
 
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
-
     permissions:
       pages: write
       id-token: write
-
     environment:
       name: github-pages
-      url: "${{ steps.deployment.outputs.page_url }}" # Fixed syntax issue here
-
     steps:
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

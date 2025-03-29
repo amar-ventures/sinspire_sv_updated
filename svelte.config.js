@@ -1,24 +1,33 @@
-import adapter from '@sveltejs/adapter-static';
+import adapterStatic from '@sveltejs/adapter-static';
+import adapterAuto from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-/** @type {import('@sveltejs/kit').Config} */
+const dev = process.env.NODE_ENV === 'development';
+
 const config = {
   kit: {
-    adapter: adapter({
-      // Output the static files to the "docs" folder (GitHub Pages default)
-      pages: 'docs',
-      assets: 'docs',
-      // Use a fallback page for non-prerendered routes (e.g. a 404 page)
-      fallback: '404.html',
-      precompress: false,
-      strict: true
-    }),
-    // When deploying to GitHub Pages, ensure the base matches your repository name.
-    paths: {
-      base: '/sinspire_svelte_updated'   // replace 'your-repo-name' with your actual repository name
+    // Use adapter-auto in development; in production, use adapter-static with a fallback.
+    adapter: dev
+      ? adapterAuto()
+      : adapterStatic({
+          // Output folder for production
+          pages: 'build',
+          assets: 'build',
+          // Use a fallback file so that dynamic routes load the SPA entrypoint.
+          fallback: 'index.html',
+          precompress: false,
+          // Set strict to false to allow dynamic routes even if they are not fully prerenderable.
+          strict: false
+        }),
+    // Enable prerendering of static routes.
+    // This will attempt to prerender all pages that export `export const prerender = true`
+    prerender: {
+      entries: dev ? [] : ['*']
     },
-    // Optionally, use trailingSlash if your host requires an index.html per route:
-    // trailingSlash: 'always'
+    // If deploying under a subpath (e.g., GitHub Pages), uncomment and adjust the base:
+    paths: {
+      base: dev ? '' : '/sinspire_svelte_updated'
+    }
   },
   preprocess: vitePreprocess()
 };
