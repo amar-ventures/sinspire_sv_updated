@@ -33,4 +33,3 @@
   }
 </style>
 
-export const prerender = true;

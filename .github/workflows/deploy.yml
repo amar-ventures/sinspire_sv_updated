@@ -16,24 +16,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 23.9.0
+          node-version: 16
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the site
-        env:
-          # Make sure BASE_PATH matches paths.base if you reference it in code
-          BASE_PATH: '/sinspire_svelte_updated'
         run: npm run build
 
-      # (If you used Option B, ensure docs exists by your postbuild script.)
-      
-      - name: Upload artifact
+      - name: Upload artifact for deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docs'
+          path: build
 
   deploy:
     needs: build_site
