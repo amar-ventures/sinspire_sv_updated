@@ -1,0 +1,71 @@
+
+> sinspire@0.0.1 build
+> vite build && npm run prepack
+
+vite v6.2.3 building SSR bundle for production...
+transforming...
+✓ 172 modules transformed.
+rendering chunks...
+vite v6.2.3 building for production...
+transforming...
+✓ 154 modules transformed.
+rendering chunks...
+computing gzip size...
+.svelte-kit/output/client/_app/version.json                        0.03 kB │ gzip:  0.05 kB
+.svelte-kit/output/client/.vite/manifest.json                      5.94 kB │ gzip:  0.84 kB
+.svelte-kit/output/client/_app/immutable/assets/0.BLHH1xPc.css     0.08 kB │ gzip:  0.09 kB
+.svelte-kit/output/client/_app/immutable/chunks/BAEXSiYM.js        0.04 kB │ gzip:  0.06 kB
+.svelte-kit/output/client/_app/immutable/entry/start.DXWb20DQ.js   0.08 kB │ gzip:  0.09 kB
+.svelte-kit/output/client/_app/immutable/chunks/7JixK4XN.js        0.45 kB │ gzip:  0.27 kB
+.svelte-kit/output/client/_app/immutable/chunks/LhIw9FDu.js        0.51 kB │ gzip:  0.33 kB
+.svelte-kit/output/client/_app/immutable/nodes/1.CmynsXwq.js       0.62 kB │ gzip:  0.38 kB
+.svelte-kit/output/client/_app/immutable/chunks/BsfqRsx0.js        0.68 kB │ gzip:  0.43 kB
+.svelte-kit/output/client/_app/immutable/chunks/BCxp-ARf.js        0.91 kB │ gzip:  0.54 kB
+.svelte-kit/output/client/_app/immutable/chunks/h1BlrGCb.js        1.22 kB │ gzip:  0.73 kB
+.svelte-kit/output/client/_app/immutable/chunks/bLl-dWV3.js        1.32 kB │ gzip:  0.73 kB
+.svelte-kit/output/client/_app/immutable/nodes/4.D70ZQeC6.js       2.58 kB │ gzip:  1.13 kB
+.svelte-kit/output/client/_app/immutable/chunks/DQ1Czy_X.js        3.04 kB │ gzip:  1.57 kB
+.svelte-kit/output/client/_app/immutable/chunks/DODr5-l9.js        3.12 kB │ gzip:  1.59 kB
+.svelte-kit/output/client/_app/immutable/chunks/Ci96OHuO.js        3.90 kB │ gzip:  1.92 kB
+.svelte-kit/output/client/_app/immutable/nodes/5.Fqawiqga.js       6.52 kB │ gzip:  2.60 kB
+.svelte-kit/output/client/_app/immutable/nodes/0.CnklE0zW.js       6.68 kB │ gzip:  2.83 kB
+.svelte-kit/output/client/_app/immutable/nodes/6.fY1xr1SK.js       6.96 kB │ gzip:  3.06 kB
+.svelte-kit/output/client/_app/immutable/entry/app.D3hdondi.js     7.73 kB │ gzip:  3.52 kB
+.svelte-kit/output/client/_app/immutable/nodes/3.DwYkZV0P.js       7.85 kB │ gzip:  2.84 kB
+.svelte-kit/output/client/_app/immutable/nodes/2.Bv39FPOK.js       9.48 kB │ gzip:  3.11 kB
+.svelte-kit/output/client/_app/immutable/chunks/CegV9JEh.js       15.16 kB │ gzip:  6.14 kB
+.svelte-kit/output/client/_app/immutable/chunks/LwlYK3t6.js       31.95 kB │ gzip: 12.43 kB
+✓ built in 433ms
+.svelte-kit/output/server/.vite/manifest.json                           3.13 kB
+.svelte-kit/output/server/_app/immutable/assets/_layout.BLHH1xPc.css    0.08 kB
+.svelte-kit/output/server/internal.js                                   0.31 kB
+.svelte-kit/output/server/chunks/site.js                                0.58 kB
+.svelte-kit/output/server/entries/fallbacks/error.svelte.js             0.61 kB
+.svelte-kit/output/server/chunks/client.js                              0.95 kB
+.svelte-kit/output/server/chunks/equality.js                            1.03 kB
+.svelte-kit/output/server/entries/pages/blog/_page.svelte.js            2.48 kB
+.svelte-kit/output/server/chunks/index.js                               4.81 kB
+.svelte-kit/output/server/entries/pages/_layout.svelte.js               5.26 kB
+.svelte-kit/output/server/entries/pages/careers/_page.svelte.js         6.84 kB
+.svelte-kit/output/server/chunks/exports.js                             6.89 kB
+.svelte-kit/output/server/entries/pages/testimonials/_page.svelte.js    7.56 kB
+.svelte-kit/output/server/entries/pages/about/_page.svelte.js           8.50 kB
+.svelte-kit/output/server/entries/pages/_page.svelte.js                10.18 kB
+.svelte-kit/output/server/chunks/internal.js                           55.88 kB
+.svelte-kit/output/server/index.js                                    106.28 kB
+✓ built in 1.61s
+
+Run npm run preview to preview your production build locally.
+
+> Using @sveltejs/adapter-static
+  Wrote site to "build"
+  ✔ done
+
+> sinspire@0.0.1 prepack
+> svelte-kit sync && svelte-package && publint
+
+src/lib -> dist
+Running publint v0.3.9 for sinspire...
+Packing files with `npm pack`...
+Linting...
+All good!
